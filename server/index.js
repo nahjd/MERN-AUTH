@@ -11,6 +11,10 @@ mongoose.connect(process.env.MONGODB_URL)
 .catch((err) => console.log('Database not connected', err))
 
 //middleware
+app.use(cors({
+  origin: 'https://mern-auth-5mwv.vercel.app',
+  credentials: true
+}));
 app.use(express.json())
 app.use(cookieParser())
 app.use(express.urlencoded ( {extended: false} ))

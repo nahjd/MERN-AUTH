@@ -9,7 +9,7 @@ import {Toaster} from 'react-hot-toast';
 import {UserContextProvider} from "../src/context/userContext.jsx";
 import Dashboard from './pages/Dashboard.jsx'
 
-axios.defaults.baseURL = 'https://mern-auth-1-9902.onrender.com/';
+axios.defaults.baseURL = 'https://mern-auth-1-9902.onrender.com';
 axios.defaults.withCredentials = true
 function App() {
   

@@ -8,7 +8,7 @@ const {test,registerUser,loginUser,getProfile}=require('../controllers/authContr
 router.use(
     cors({
         credentials: true,
-        origin: 'https://mern-auth-5mwv.vercel.app/'
+        origin: 'https://mern-auth-5mwv.vercel.app'
     })
 )
 
