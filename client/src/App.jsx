@@ -19,12 +19,14 @@ function App() {
     <UserContextProvider>
 
    
-    <Navbar />
+    {/* <Navbar /> */}
     <Toaster position='bottom-right' toastOptions={{duration: 2000}} />
     <Routes>
-      <Route path='/' element={<Home/>} />
-      <Route path='/register' element={<Register/>} />
+      <Route path='/' element={<Login/>} />
       <Route path='/login' element={<Login/>} />
+
+      <Route path='/register' element={<Register/>} />
+      {/* <Route path='/home' element={<Home/>} /> */}
       <Route path='/dashboard' element={<Dashboard/>} />
 
     </Routes>
