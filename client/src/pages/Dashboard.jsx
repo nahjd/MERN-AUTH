@@ -1,14 +1,15 @@
 import React from 'react'
 import { useContext } from 'react'
-import { UserContext } from '../context/userContext'
+// import { UserContext } from '../context/userContext'
 export default function Dashboard() {
-    const {user} = useContext(UserContext)
+    // const {user} = useContext(UserContext)
   return (
     <div>
       <h1>
-        Dashboard
+        Dashboard  
       </h1>
-      {!!user && <h2>Welcome, {user.name}!</h2>}
+      {/* {!!user && <h2>Welcome, {user.name}!</h2>} */}
+     
 
 
     </div>
