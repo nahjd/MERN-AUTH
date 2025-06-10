@@ -40,7 +40,7 @@ export default function Login() {
       } else {
         setData({ email: '', password: '' });
         toast.success('Login successful');
-        navigate('/dashboard');
+        navigate('/home');
       }
     } catch (error) {
       console.error(error);
