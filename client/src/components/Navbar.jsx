@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import './Navbar.scss';
 import { ThemeContext } from '../../src/context/ThemeContext';
 import { LanguageContext } from '../../src/context/LanguageContext';
-import { colors } from '@mui/material';
 
 export default function Navbar() {
   const { theme, toggleTheme } = useContext(ThemeContext);
@@ -14,7 +13,7 @@ export default function Navbar() {
   return (
     <nav className={`navbar-container ${theme}`}>
       <div className="navbar-logo">
-        <Link style={{backgroundColor:"transparent", textDecoration:"none", color:"blue" }} to="/">MyApp</Link>
+        <Link to="/">MyApp</Link>
       </div>
 
       <div className={`nav-links ${menuOpen ? 'open' : ''}`}>
@@ -37,14 +36,11 @@ export default function Navbar() {
             <option value="tr">TR</option>
             <option value="en">EN</option>
           </select>
-          <button onClick={toggleTheme}>
-            {theme === 'light' ? '🌙' : '☀️'}
-          </button>
         </div>
       </div>
 
       <div className="hamburger" onClick={() => setMenuOpen(!menuOpen)}>
-        ☰
+        {menuOpen ? '✖' : '☰'}
       </div>
     </nav>
   );
