@@ -1,148 +1,158 @@
-.navbar-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1rem 2rem;
-  background-color: rgba(0, 0, 0, 0.4);
-  color: white;
+.navbar {
   position: fixed;
-  width: 100%;
   top: 0;
   left: 0;
-  z-index: 1000;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.6);
   backdrop-filter: blur(5px);
+  color: white;
+  z-index: 999;
+  font-family: 'Poppins', sans-serif;
 
-  .navbar-logo a {
-    font-size: 1.5rem;
+  .navbar-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0.8rem 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .logo {
+    font-size: 1.7rem;
     font-weight: bold;
     color: white;
     text-decoration: none;
+
+    &:hover {
+      color: #00bcd4;
+    }
   }
 
-  .nav-links {
+  .hamburger {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 2rem;
+    color: white;
+    cursor: pointer;
+    z-index: 1001;
+  }
+
+  .navbar-right {
     display: flex;
     align-items: center;
-    gap: 1rem;
+    gap: 1.5rem;
+    transition: max-height 0.3s ease;
+    overflow: hidden;
 
-    ul {
+    .nav-links {
       display: flex;
       gap: 1rem;
       list-style: none;
-      margin: 0;
-      padding: 0;
 
       li a {
-        text-decoration: none;
         color: white;
+        text-decoration: none;
         font-weight: 500;
-        transition: 0.3s;
 
         &:hover {
           color: #00bcd4;
         }
       }
 
-      .btn-login {
+      .btn.login {
         border: 1px solid white;
-        color: white;
-        padding: 0.3rem 0.6rem;
-        border-radius: 5px;
-        transition: 0.3s;
+        padding: 0.3rem 0.7rem;
+        border-radius: 4px;
 
         &:hover {
-          background-color: white;
+          background: white;
           color: black;
         }
       }
 
-      .btn-signup {
-        background-color: white;
+      .btn.signup {
+        background: white;
         color: black;
-        padding: 0.3rem 0.6rem;
-        border-radius: 5px;
-        transition: 0.3s;
+        padding: 0.3rem 0.7rem;
+        border-radius: 4px;
 
         &:hover {
-          background-color: #00bcd4;
+          background: #00bcd4;
           color: white;
         }
       }
     }
 
-    .navbar-actions {
+    .actions {
       display: flex;
-      align-items: center;
-      gap: 0.5rem;
+      gap: 1rem;
 
-      input {
-        padding: 0.3rem;
-        border: none;
+      input, select {
+        padding: 0.3rem 0.5rem;
         border-radius: 5px;
+        border: none;
       }
 
       select {
-        padding: 0.3rem;
-        border-radius: 5px;
-        border: none;
+        background: white;
+        color: black;
+        font-weight: 600;
         cursor: pointer;
       }
     }
   }
 
-  .hamburger {
-    display: none;
-    font-size: 2rem;
-    color: white;
-    cursor: pointer;
-  }
-
-  // RESPONSIVE
   @media (max-width: 768px) {
-    .nav-links {
-      display: none;
-      flex-direction: column;
-      align-items: flex-start;
-      width: 100%;
-      background-color: rgba(0, 0, 0, 0.95);
-      padding: 1rem;
+    .hamburger {
+      display: block;
+    }
+
+    .navbar-right {
       position: absolute;
       top: 100%;
       left: 0;
-    }
-
-    .nav-links.open {
-      display: flex;
-    }
-
-    .nav-links ul {
-      flex-direction: column;
       width: 100%;
-      padding-left: 0;
+      background: rgba(0, 0, 0, 0.95);
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 0;
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s ease-in-out;
 
-      li {
+      &.active {
+        padding: 1rem 1.5rem;
+        max-height: 1000px;
+      }
+
+      .nav-links {
+        flex-direction: column;
         width: 100%;
-        padding: 0.5rem 0;
+        padding: 0;
 
-        a {
-          display: block;
+        li {
+          width: 100%;
+
+          a {
+            display: block;
+            width: 100%;
+            padding: 0.5rem 0;
+            color: white;
+          }
+        }
+      }
+
+      .actions {
+        flex-direction: column;
+        width: 100%;
+        margin-top: 1rem;
+
+        input, select {
           width: 100%;
         }
       }
-    }
-
-    .navbar-actions {
-      flex-direction: column;
-      align-items: flex-start;
-      width: 100%;
-      margin-top: 1rem;
-
-      input, select {
-        width: 100%;
-      }
-    }
-
-    .hamburger {
-      display: block;
     }
   }
 }
